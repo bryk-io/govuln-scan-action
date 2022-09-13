@@ -1,0 +1,10 @@
+name: bryk-io/govuln-scan
+description: Low-noise and reliable Go vulnerabilities scan using the official database (https://vuln.go.dev).
+author: bryk-io
+branding:
+  icon: shield
+  color: orange
+runs:
+  using: docker
+  image: Dockerfile
+  entrypoint: "/bin/scan"

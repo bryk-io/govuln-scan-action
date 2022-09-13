@@ -1,0 +1,29 @@
+# Generals
+.DS_Store
+.idea
+*.iml
+.code
+.vscode
+
+# Deps
+vendor/**
+
+# NodeJS
+node_modules
+package-lock.json
+build
+
+# PKI
+*.crt
+*.csr
+*.cer
+*.pem
+*.key
+!**/testdata/*.cer
+!**/testdata/*.pem
+
+# Secret files
+**/*secret*
+
+# Temp file
+tmp

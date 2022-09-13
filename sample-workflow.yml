@@ -1,0 +1,21 @@
+name: scan
+on:
+  # To manually run
+  workflow_dispatch: {}
+  # To automatically run for all commits on branch 'main'
+  push:
+    branches:
+      - main
+jobs:
+  # GoKart scan
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      # Checkout code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Vulnerabilities scan
+      - name: Go vulnerabilities scan
+        uses: bryk-io/govuln-scan@v0.1.0
