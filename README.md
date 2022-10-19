@@ -20,7 +20,7 @@ Sample step configuration.
 steps:
   # Vulnerabilities scan
   - name: Go vulnerabilities scan
-    uses: bryk-io/govuln-scan@v0.1.0
+    uses: bryk-io/govuln-scan-action@v0.1.0
 ```
 
 ## Workflow
@@ -48,7 +48,7 @@ jobs:
 
       # Vulnerabilities scan
       - name: Go vulnerabilities scan
-        uses: bryk-io/govuln-scan@v0.1.0
+        uses: bryk-io/govuln-scan-action@v0.1.0
 ```
 
 To manually trigger this workflow using GitHub's CLI tool.
