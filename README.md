@@ -10,6 +10,13 @@ tooling is backed by the Go vulnerability database, which is curated by the Go s
 team. Go’s tooling reduces noise in your results by only surfacing vulnerabilities in
 functions that your code is actually calling.
 
+> __Important__: The go version used to build `govulncheck` must match the version used
+> in your project. Use the action tags to select the appropriate version. For example,
+> for Go `1.20.x` use `bryk-io/govuln-scan-action@v1.20`.
+>
+> For more information about this requirement please refer to this issue
+> <https://github.com/golang/go/issues/55045>.
+
 More information: [Vulnerability Management for Go](https://go.dev/blog/vuln).
 
 ## Usage
@@ -20,7 +27,7 @@ Sample step configuration.
 steps:
   # Vulnerabilities scan
   - name: Go vulnerabilities scan
-    uses: bryk-io/govuln-scan-action@v0.1.0
+    uses: bryk-io/govuln-scan-action@v1.20
 ```
 
 ## Workflow
@@ -37,7 +44,7 @@ on:
     branches:
       - main
 jobs:
-  # GoKart scan
+  # govulncheck scan
   scan:
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -48,7 +55,7 @@ jobs:
 
       # Vulnerabilities scan
       - name: Go vulnerabilities scan
-        uses: bryk-io/govuln-scan-action@v0.1.0
+        uses: bryk-io/govuln-scan-action@v1.20
 ```
 
 To manually trigger this workflow using GitHub's CLI tool.
