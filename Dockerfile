@@ -1,9 +1,11 @@
-FROM golang:1.18-alpine
+FROM golang:1.20-alpine
+
+COPY bin/* /go/bin/
 
 COPY scan.sh /bin/scan
 
 RUN \
-	go install golang.org/x/vuln/cmd/govulncheck@latest && \
-	chmod +x /bin/scan
+  apk add git && \
+  chmod +x /bin/scan
 
 ENTRYPOINT ["/bin/scan"]

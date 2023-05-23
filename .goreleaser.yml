@@ -21,6 +21,7 @@ dockers:
     skip_push: 'false'
     extra_files:
       - scan.sh
+      - bin
     image_templates:
       - "ghcr.io/bryk-io/{{ .ProjectName }}:{{ .Version }}"
       - "ghcr.io/bryk-io/{{ .ProjectName }}:latest"

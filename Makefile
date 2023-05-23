@@ -7,4 +7,4 @@ help:
 
 ## build: Build the action image
 build:
-	docker build -t ghcr.io/bryk-io/govuln-scan-action .
+	docker build --platform linux/amd64 -t ghcr.io/bryk-io/govuln-scan-action .
